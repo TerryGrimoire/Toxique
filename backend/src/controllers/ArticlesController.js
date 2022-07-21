@@ -1,8 +1,8 @@
 const models = require("../models");
 
-class ItemController {
+class ArticlesController {
   static browse = (req, res) => {
-    models.item
+    models.articles
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -14,4 +14,4 @@ class ItemController {
   };
 }
 
-module.exports = ItemController;
+module.exports = ArticlesController;
