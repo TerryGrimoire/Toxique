@@ -1,84 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Home() {
+  const [articles, setArticles] = useState();
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/articles`)
+      .then((res) => {
+        setArticles(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
   return (
     <div>
-      <article className="flex justify-start items-center">
-        <div>
-          <iframe
-            src="https://giphy.com/embed/3iCz9DIVVIjuPmsAs1"
-            width="480"
-            height="320"
-            frameBorder="0"
-            className="giphy-embed"
-            allowFullScreen
-            title="fragile masculinity"
-          />
-        </div>
-        <section className="flex flex-col items-around">
-          <h2>Bonjour les masculins fragiles, bonjour à tous les autres !</h2>
-          <p>
-            Bien que ce site internet traite d'un sujet masculin, il ne
-            s'adresse pas qu'aux garçons. Il s'adresse également aux femmes
-            souffrant de masculinité toxique/patriarcat, aux parents actuels se
-            posant des questions sur l'éducation de leurs enfants, aux
-            acteur.rice.s de l'éducation qui souhaitent combattre un modèle
-            archaïque. Bref, ce site s'adresse à toute personne de la société
-            directement ou indirectement impactée par nos amis les masculins
-            toxiques.
-          </p>
-        </section>
-      </article>
-
-      <article className="flex justify-start items-center">
-        <section className="flex flex-col items-around">
-          <h2>Ouin-Ouin, ça va trop loin !</h2>
-          <p>
-            Une nouvelle fois, le contenu de ce site peut choquer certaines
-            personnes et ça tombe bien, il est fait pour ça ! L'objectif est de
-            tirer la sonnette d'alarme sur un modèle éducatif qui n'a plus lieu
-            d'être. L'objectif est de faire prendre conscience de la toxicité
-            actuelle de nos modèles masculins. Plus tôt vous serez dépisté et
-            plus vite vous aurez des chances d'en être soigné.
-          </p>
-        </section>
-        <div>
-          <iframe
-            src="https://giphy.com/embed/mFLwhK78MiU0GpsJvY"
-            width="406"
-            height="480"
-            frameBorder="0"
-            title="boys tears"
-          />
-        </div>
-      </article>
-      <article className="flex justify-start items-center">
-        <div>
-          <iframe
-            src="https://giphy.com/embed/IblcONgsnHWrtbGU5Q"
-            width="480"
-            height="480"
-            frameBorder="0"
-            title="destroy patriarchy not the planet"
-          />
-        </div>
-        <section className="flex flex-col items-around">
-          <h2> Le patriarcat doit être détruit pas la planète !</h2>
-          <p>
-            Vous pensez sans doute qu'il n'y a aucun rapport entre la planète et
-            le patriarcat ? Et bien, vous vous trompez ! Une étude corrélée par
-            les chiffres de l’Insee a montré qu'en Europe, les émissions CO2
-            d’un homme sont 20% supérieures à celles d’une femme. En France les
-            hommes achètent plus de viande et utilisent moins les transports en
-            commun que les femmes. Entretien et carburant liés à l’utilisation
-            d’une voiture (grosse voiture = virilité ?) ou encore consommation
-            plus importante de viande, les clichés qui, dans l’imaginaire
-            collectif, sont associé à la virilité d’un homme ont des
-            conséquences directes sur l’environnement.
-          </p>
-        </section>
-      </article>
+      {articles &&
+        articles.map((article) => (
+          <article className="flex justify-start items-center">
+            <div>
+              <iframe
+                src={article.image}
+                width="480"
+                height="320"
+                frameBorder="0"
+                className="giphy-embed"
+                allowFullScreen
+                title={article.title}
+              />
+            </div>
+            <section className="flex flex-col items-around">
+              <h2>{article.titre}</h2>
+              <p>{article.text}</p>
+            </section>
+          </article>
+        ))}
 
       <article className="flex flex-col justify-center items-center choice">
         Maintenant, c'est à vous de choisir
