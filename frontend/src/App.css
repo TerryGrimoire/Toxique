@@ -121,19 +121,19 @@ header, footer {
 .faq > * {
   width: 50%;
   box-shadow: var(--box-shadow);
+  padding: 1rem 2rem;
+
 }
 
 .faq p {
   border-radius: 0 0 0.5rem 0.5rem;
-  padding: 1rem 2rem;
 }
 
 .openbutton {
   border-radius: 0.5rem 0.5rem 0 0;
-  padding: 0.5rem 2rem;
+  
 }
 
 .closebutton {
   border-radius: 0.5rem;
-  padding: 0.5rem 2rem;
 }
