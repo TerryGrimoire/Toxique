@@ -24,6 +24,7 @@ body {
 }
 h1 {
   margin : 2rem auto;
+  font-size: 3rem;
 }
 article {
   margin: 8rem 5rem;
@@ -179,8 +180,9 @@ header, footer {
   box-shadow: var(--box-shadow);
   background-color: var(--dark-color);
   color: var(--light-color);
-  padding: 2rem 1rem;
+  padding: 0.25rem 1rem 1rem;
   border-radius: 0.5rem;
+  height: 10rem;
 }
 
 .dark {
@@ -201,4 +203,8 @@ header, footer {
 .forum-question {
   border-radius: 0.5rem;
   padding: 2rem;
+}
+
+.buttons-container {
+  justify-content: center;
 }

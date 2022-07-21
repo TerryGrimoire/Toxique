@@ -12,7 +12,7 @@ function Depistage() {
         <img src="" alt="test_img" />
         <p>La question qui tue sur la masculinité toxique ? </p>
       </div>
-      <div className="flex">
+      <div className="flex buttons-container">
         <button type="button" className="btn dark">
           VRAI
         </button>
