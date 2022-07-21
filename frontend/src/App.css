@@ -8,6 +8,7 @@
   --dark-color : black;
   --light-color : #f1f1f1;
   --third-color : pink;
+  --box-shadow:  rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 
@@ -24,6 +25,8 @@ body {
 
 article {
   margin: 8rem 5rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
 }
 
 a {
@@ -90,20 +93,47 @@ header, footer {
   justify-content: center;
   align-items: center;
   transition: all 1s ease-in-out;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; ;
+  box-shadow: var(--box-shadow);
 }
 
 .boomer:hover {
   background-image: url(./assets/boomer.gif);
-  background-position: center;
-  background-size: 20%;
+  background-size:70%;
+  background-repeat: repeat-x;
 
 }
 .educate:hover {
   background-image: url(./assets/yes.gif);
-  background-position: center;
-  background-size: 25%;
+  background-size: 50%;
 }
 .choice {
+ padding: 2rem ;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   margin: 5rem 0;
+}
+
+.faq > * {
+  width: 50%;
+  box-shadow: var(--box-shadow);
+  padding: 1rem 2rem;
+
+}
+
+.faq p {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.openbutton {
+  border-radius: 0.5rem 0.5rem 0 0;
+  
+}
+
+.closebutton {
+  border-radius: 0.5rem;
 }

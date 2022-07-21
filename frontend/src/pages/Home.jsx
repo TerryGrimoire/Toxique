@@ -49,8 +49,6 @@ function Home() {
             width="406"
             height="480"
             frameBorder="0"
-            className="giphy-embed"
-            allowFullScreen
             title="boys tears"
           />
         </div>
@@ -62,8 +60,6 @@ function Home() {
             width="480"
             height="480"
             frameBorder="0"
-            className="giphy-embed"
-            allowFullScreen
             title="destroy patriarchy not the planet"
           />
         </div>
@@ -84,7 +80,7 @@ function Home() {
         </section>
       </article>
 
-      <section className="flex flex-col justify-center items-center choice">
+      <article className="flex flex-col justify-center items-center choice">
         Maintenant, c'est à vous de choisir
         <div className="flex">
           <Link to="/Education">
@@ -94,11 +90,11 @@ function Home() {
           </Link>
           <Link to="/Error404">
             <button type="button" className="btn boomer">
-              Boomer et fier
+              Toxique et fier
             </button>
           </Link>
         </div>
-      </section>
+      </article>
 
       {/** <iframe src="https://giphy.com/embed/5C2d0RRxx5hvq9blM3" width="480" height="290" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
       <iframe src="https://giphy.com/embed/chJhmOrQaAYPWDmULG" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
