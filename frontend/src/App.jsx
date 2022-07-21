@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Education from "./pages/Education";
 import ParlonsEn from "./pages/ParlonsEn";
+import Forum from "./pages/Forum";
 import Depistage from "./pages/Depistage";
 import Error404 from "./pages/Error404";
 import Warning from "./pages/Warning";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Warning" element={<Warning />} />
         <Route path="/Education" element={<Education />} />
         <Route path="/Parlons_en" element={<ParlonsEn />} />
+        <Route path="/Parlons_en/:id" element={<Forum />} />
         <Route path="/Depistage" element={<Depistage />} />
         <Route path="/ERROR404" element={<Error404 />} />
       </Routes>

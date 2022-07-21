@@ -22,7 +22,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
-
+h1 {
+  margin : 2rem auto;
+}
 article {
   margin: 8rem 5rem;
   box-shadow: var(--box-shadow);
@@ -119,7 +121,7 @@ header, footer {
 }
 
 .faq > * {
-  width: 50%;
+  width: 100%;
   box-shadow: var(--box-shadow);
   padding: 1rem 2rem;
 
@@ -136,4 +138,67 @@ header, footer {
 
 .closebutton {
   border-radius: 0.5rem;
+}
+
+.subject {
+  box-shadow: var(--box-shadow);
+  margin: 3rem 0rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.subject:hover {
+  background-image: url(./assets/chat.gif);
+  background-size: 10%;
+  background-repeat:no-repeat;
+  background-position: 100% -50%;
+}
+
+.container {
+  margin: 2rem 15rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  margin: 2rem 0;
+  padding: 1rem ;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+}
+
+.forum-input {
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.depistage {
+  box-shadow: var(--box-shadow);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 2rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.dark {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.send {
+  position: absolute;
+  left: 76%;
+  width: 5rem;
+  z-index: 5;
+  background-image: url(./assets/chat.gif);
+  background-position: center;
+  background-size: 100%;
+}
+
+.forum-question {
+  border-radius: 0.5rem;
+  padding: 2rem;
 }
