@@ -22,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
-h1, h2 {
+h1 {
   margin : 2rem auto;
 }
 article {
@@ -186,4 +186,19 @@ header, footer {
 .dark {
   background-color: var(--dark-color);
   color: var(--light-color);
+}
+
+.send {
+  position: absolute;
+  left: 76%;
+  width: 5rem;
+  z-index: 5;
+  background-image: url(./assets/chat.gif);
+  background-position: center;
+  background-size: 100%;
+}
+
+.forum-question {
+  border-radius: 0.5rem;
+  padding: 2rem;
 }
