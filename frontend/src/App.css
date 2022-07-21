@@ -1,3 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/***_________________________________________________________________________________VARIABLES CSS __________________________________________________________________________________***/
+
+:root {
+  --dark-color : black;
+  --light-color : #f1f1f1;
+  --third-color : pink;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -53,4 +66,23 @@ code {
 
 button {
   font-size: calc(10px + 2vmin);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  padding: 0 1rem;
+}
+
+li:hover  {
+  color: var(--third-color);
+}
+
+header, footer {
+  padding: 1rem;
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
