@@ -294,3 +294,14 @@ header, footer {
   border-radius: 0.5rem;
   width: 80%;
 }
+
+.game-question {
+  text-align: center;
+  padding-top: 2.5rem;
+}
+
+.score-final {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
