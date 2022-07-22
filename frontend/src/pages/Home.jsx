@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -17,11 +18,14 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="articles-container">
+      <Helmet>
+        <title> Toxique | Accueil </title>
+      </Helmet>
       {articles &&
         articles.map((article) => (
           <article className="flex justify-start items-center">
-            <div>
+            <div className="voile-container">
               <iframe
                 src={article.image}
                 width="480"
@@ -31,6 +35,7 @@ function Home() {
                 allowFullScreen
                 title={article.title}
               />
+              <div className="voile" />
             </div>
             <section className="flex flex-col items-around">
               <h2>{article.titre}</h2>
@@ -40,7 +45,7 @@ function Home() {
         ))}
 
       <article className="flex flex-col justify-center items-center choice">
-        Maintenant, c'est à vous de choisir
+        <h2>Maintenant, c'est à vous de choisir</h2>
         <div className="flex">
           <Link to="/Education">
             <button type="button" className="btn educate">
@@ -54,15 +59,6 @@ function Home() {
           </Link>
         </div>
       </article>
-
-      {/** <iframe src="https://giphy.com/embed/5C2d0RRxx5hvq9blM3" width="480" height="290" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      <iframe src="https://giphy.com/embed/chJhmOrQaAYPWDmULG" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      <iframe src="https://giphy.com/embed/1fjGzt1zIO9A9FnWAh" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      <iframe src="https://giphy.com/embed/svsKIGiRjuiKCKL4Gk" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      <iframe src="https://giphy.com/embed/1YLHVyLfKYSZyZgzfI" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      <iframe src="https://giphy.com/embed/cueX7HBTz5Fz8FDj0x" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      <iframe src="https://giphy.com/embed/WUTv0h7TfsBpRL0yuT" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-  * */}
     </div>
   );
 }

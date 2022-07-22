@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 function Depistage() {
   return (
     <div className="container">
+      <Helmet>
+        <title> Toxique | Déspistage </title>
+      </Helmet>
       <h1>Dépiste-toi</h1>
 
       <div className="depistage">
