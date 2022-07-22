@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import forum from "../fakeData/forum";
 
 function Forum() {
   const { id } = useParams();
-  const [comment, setComment] = useState();
   const [comments, setComments] = useState();
+  const [data, setData] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    forum[id].comments.push({
-      id: 0,
-      content: comment,
-    });
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/comment`, data)
+      .catch((err) => console.error(err));
   };
 
   useEffect(() => {
@@ -25,7 +23,7 @@ function Forum() {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [data]);
 
   return (
     <div className="container">
@@ -45,7 +43,7 @@ function Forum() {
         <input
           type="text"
           className="forum-input"
-          onChange={(e) => setComment(e.target.value)}
+          onChange={(e) => setData({ content: e.target.value, subject_id: id })}
         />
         <button type="submit" className="send">
           ...
