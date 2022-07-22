@@ -14,6 +14,40 @@ class CommentController {
         res.sendStatus(500);
       });
   };
+
+  static delete = (req, res) => {
+    models.comment
+      .delete(req.params.id)
+      .then(() => {
+        res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static edit = (req, res) => {
+    const comment = req.body;
+
+    // TODO validations (length, format...)
+
+    const id = parseInt(req.params.id, 10);
+
+    models.comment
+      .update(comment, id)
+      .then(([result]) => {
+        if (result.affectedRows === 0) {
+          res.sendStatus(404);
+        } else {
+          res.sendStatus(204);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
 }
 
 module.exports = CommentController;
