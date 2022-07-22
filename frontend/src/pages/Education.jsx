@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import axios from "axios";
 import Faq from "../components/Faq";
 
@@ -17,6 +18,9 @@ function Education() {
   }, []);
   return (
     <div className="container">
+      <Helmet>
+        <title> Toxique | Education </title>
+      </Helmet>
       <h1>Eduquons-nous</h1>
       <div>{faq && faq.map((el) => <Faq el={el} />)}</div>
     </div>

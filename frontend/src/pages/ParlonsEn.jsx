@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -16,6 +17,9 @@ function ParlonsEn() {
   }, []);
   return (
     <div className="container">
+      <Helmet>
+        <title> Toxique | Parlons-en </title>
+      </Helmet>
       <h1>Parlons-en</h1>
       <div>
         {subjects &&
