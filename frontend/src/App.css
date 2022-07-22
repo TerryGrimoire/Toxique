@@ -1,307 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/***_________________________________________________________________________________VARIABLES CSS __________________________________________________________________________________***/
-
-:root {
-  --dark-color : black;
-  --light-color : #f1f1f1;
-  --third-color : pink;
-  --box-shadow:  rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-
-
 body {
-  box-sizing: border-box;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: relative;
-}
-h1 {
-  margin : 2rem auto;
-  font-size: 3rem;
-}
-h2,h3 {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-article {
-  margin: 8rem 5rem;
-  box-shadow: var(--box-shadow);
-  border-radius: 0.5rem;
 }
 
-a {
-  text-decoration: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-li {
-  list-style: none;
-  padding: 0 1rem;
-}
-
-li:hover  {
-  color: var(--third-color);
-}
-
-header, footer {
-  padding: 1rem;
-  background-color: var(--dark-color);
-  color: var(--light-color);
-}
-
-.warning {
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 5;
-  background-color: var(--dark-color);
-  color: var(--light-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url(./assets/warning.png);
-  background-repeat: no-repeat;
-  background-position: 50% 2rem;
-  background-size: 25rem;
-}
-.warning h2 {
-  font-size: 5rem;
-  margin-top: 5em;
-}
-
-.items-center {
-  align-items: center;
-}	
-
-.justify-start {
-  justify-content: start;
-  margin-left: 5rem;
-}
-
-.items-around {
-  padding: 1rem 2rem;
-}
-
-.btn {
-  margin: 4rem ;
-  padding: 2rem 2rem;
-  border-radius: 0.5rem;
-  width: 12rem;
-  height: 3.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 1s ease-in-out;
-  box-shadow: var(--box-shadow);
-}
-
-.boomer:hover {
-  background-image: url(./assets/boomer.gif);
-  background-size:70%;
-  background-repeat: repeat-x;
-
-}
-.educate:hover {
-  background-image: url(./assets/yes.gif);
-  background-size: 50%;
-}
-.choice {
- padding: 2rem ;
-}
-
-.faq {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  margin: 5rem 0;
-}
-
-.faq > * {
-  width: 100%;
-  box-shadow: var(--box-shadow);
-  padding: 1rem 2rem;
-
-}
-
-.faq p {
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.openbutton {
-  border-radius: 0.5rem 0.5rem 0 0;
-  
-}
-
-.closebutton {
-  border-radius: 0.5rem;
-}
-
-.subject {
-  box-shadow: var(--box-shadow);
-  margin: 3rem 0rem;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-}
-
-.subject:hover {
-  background-image: url(./assets/chat.gif);
-  background-size: 10%;
-  background-repeat:no-repeat;
-  background-position: 100% -50%;
-}
-
-.container {
-  margin: 2rem 15rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.comment {
-  margin: 2rem 0;
-  padding: 1rem ;
-  box-shadow: var(--box-shadow);
-  border-radius: 0.5rem;
-}
-
-.forum-input {
-  width: 100%;
-  box-shadow: var(--box-shadow);
-  border-radius: 0.5rem;
-  padding: 0.35rem 0.5rem;
-  font-size: 0.75rem;
-}
-
-.depistage {
-  box-shadow: var(--box-shadow);
-  background-color: var(--dark-color);
-  color: var(--light-color);
-  padding: 0.25rem 1rem 1rem;
-  border-radius: 0.5rem;
-  height: 10rem;
-}
-
-.dark {
-  background-color: var(--dark-color);
-  color: var(--light-color);
-}
-
-.send {
-  position: absolute;
-  left: 76%;
-  width: 5rem;
-  z-index: 5;
-  background-image: url(./assets/chat.gif);
-  background-position: center;
-  background-size: 100%;
-}
-
-.forum-question {
-  border-radius: 0.5rem;
-  padding: 2rem;
-}
-
-.buttons-container {
-  justify-content: center;
-}
-
-.voile-container {
-  position: relative;
-}
-
-.voile {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-.articles-container article:nth-child(2) {
-  flex-direction: row-reverse;
-}
-
-.error-container {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.giphy {
-  border-radius: 2rem;
-  margin: 0 5rem;
-}
-
-.comment-update {
-  position: absolute;
-  top: 5%;
-  left: 97%;
-}
-
-.img-points {
-  width: 70%;
-}
-
-.modal {
-  position: absolute;
-  background-color: var(--light-color);
-  z-index: 2;
-  top: 0;
-  right: 1.2rem;
-  border-radius: 0.5rem;
-  box-shadow: var(--box-shadow);
-}
-.modal button {
-  padding: 0.5rem 1rem;
-}
-.modal button:hover {
-  box-shadow: var(--box-shadow);
-  padding: 0.5rem 1rem;
-}
-
-.modal-edit {
-  position: absolute;
-  top: 15rem;
-  left: 10rem;
-  z-index: 3;
-  background-color: var(--light-color);
-  box-shadow: var(--box-shadow);
-  border-radius: 2rem;
-  height: 10rem;
-  width:80%;
-  padding: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-edit input {
-  padding: 0.5em 1rem;
-  box-shadow: var(--box-shadow);
-  border-radius: 0.5rem;
-  width: 80%;
-}
-
-.game-question {
+.App {
   text-align: center;
-  padding-top: 2.5rem;
 }
 
-.score-final {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  font-size: calc(10px + 2vmin);
 }
