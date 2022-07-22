@@ -17,10 +17,10 @@ class SubjectController {
     models.subject
       .find(req.params.id)
       .then(([rows]) => {
-        if (rows[0] == null) {
+        if (rows == null) {
           res.sendStatus(404);
         } else {
-          res.send(rows[0]);
+          res.status(201).json(rows);
         }
       })
       .catch((err) => {

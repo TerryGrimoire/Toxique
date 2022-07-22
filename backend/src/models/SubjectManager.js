@@ -9,7 +9,9 @@ class SubjectManager extends AbstractManager {
 
   find(id) {
     return this.connection.query(
-      `select * from  ${this.table} where subject_id = ?`,
+      `select * from  ${this.table} 
+      INNER JOIN comment ON comment.subject_id = subject.subject_id 
+      where comment.subject_id = ?`,
       [id]
     );
   }

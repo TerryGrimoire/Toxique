@@ -31,14 +31,14 @@ function Forum() {
     <div className="container">
       <h1>Forum</h1>
       <div className="forum-question dark">
-        <h2>{comments && comments.title}</h2>
-        <p>{comments && comments.description}</p>
+        <h2>{comments && comments[0].title}</h2>
+        <p>{comments && comments[0].description}</p>
       </div>
       <section>
-        {/* comments &&
-          comments.comments.map((commentMap) => (
+        {comments &&
+          comments.map((commentMap) => (
             <p className="comment">{commentMap.content}</p>
-          )) */}
+          ))}
       </section>
 
       <form onSubmit={(e) => handleSubmit(e)}>
