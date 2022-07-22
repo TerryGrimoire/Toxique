@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
 import forum from "../fakeData/forum";
 
 function Forum() {
   const { id } = useParams();
   const [comment, setComment] = useState();
+  const [comments, setComments] = useState();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     forum[id].comments.push({
@@ -13,17 +16,29 @@ function Forum() {
     });
   };
 
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/subject/${id}`)
+      .then((res) => {
+        setComments(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
   return (
     <div className="container">
       <h1>Forum</h1>
       <div className="forum-question dark">
-        <h2>{forum[id].title}</h2>
-        <p>{forum[id].description}</p>
+        <h2>{comments && comments[0].title}</h2>
+        <p>{comments && comments[0].description}</p>
       </div>
       <section>
-        {forum[id].comments.map((commentMap) => (
-          <p className="comment">{commentMap.content}</p>
-        ))}
+        {comments &&
+          comments.map((commentMap) => (
+            <p className="comment">{commentMap.content}</p>
+          ))}
       </section>
 
       <form onSubmit={(e) => handleSubmit(e)}>
