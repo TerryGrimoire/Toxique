@@ -1,18 +1,14 @@
-## Concept
+## Toxique
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+Toxique est une plateforme dédiée à un sujet ultra important qui est la masculinité toxique. Vous avez la possibilité de vous éduquer dans un premier temps sur les problemes, causes et conséquences de la masculinité toxiques, puis, sur un forum dédié, vous pouvez également échanger sur des sujets divers et variés. À tout moment, nous vous invitons à vous dépister et vérifier votre pourcentage de masculinité toxique ! 
 
-## Setup & Use
+## Fait en seulement 24H dans le cadre d'un checkpoint de fin d'étude. 
 
-### Project Initialization
+### Maquette faite sur uizard : 
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- Run command `npm run setup`
-- _NB: To launch the backend server, you'll need an environment file with database credentials. You'll find a template one in `backend/.env.sample`_
+https://app.uizard.io/prototypes/Z8brwze9ReH8Lvy0B4qm
 
-### Available Commands
+### Modélisation de la base de donnée 
 
 - `setup` : Initialization of frontend and backend, as well as all toolings
 - `dev` : Starts both servers (frontend + backend) in one terminal
