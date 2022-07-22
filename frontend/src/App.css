@@ -244,3 +244,53 @@ header, footer {
   border-radius: 2rem;
   margin: 0 5rem;
 }
+
+.comment-update {
+  position: absolute;
+  top: 5%;
+  left: 97%;
+}
+
+.img-points {
+  width: 70%;
+}
+
+.modal {
+  position: absolute;
+  background-color: var(--light-color);
+  z-index: 2;
+  top: 0;
+  right: 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+.modal button {
+  padding: 0.5rem 1rem;
+}
+.modal button:hover {
+  box-shadow: var(--box-shadow);
+  padding: 0.5rem 1rem;
+}
+
+.modal-edit {
+  position: absolute;
+  top: 15rem;
+  left: 10rem;
+  z-index: 3;
+  background-color: var(--light-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 2rem;
+  height: 10rem;
+  width:80%;
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-edit input {
+  padding: 0.5em 1rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  width: 80%;
+}
